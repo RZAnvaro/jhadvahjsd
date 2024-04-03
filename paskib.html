@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="" />
+        <title>Barisan Paskibra Al-Wafa</title>
+        <link rel="icon" href="LogoBASWAFA.png">
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"/>
+    </head>
+    
+    <body id="home">
+
+      <style>
+        html {
+          scroll-behavior: smooth;
+      }
+      
+      body {
+        padding: 0;
+        margin: 0;
+          background-color: rgb(0, 0, 0);
+          font-family: 'Montserrat', sans-serif;
+          margin-top: 100px;
+      }
+      
+      .dark-mode {
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
+        }
+      
+      nav {
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        right: 0;
+        top: 0;
+        font-family: 'Montserrat', sans-serif;
+        padding: 0 5%;
+        height: 100px;
+        background-color: #000000;
+      }
+      nav .logo {
+        float: left;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        color: #fff;
+      }
+      nav .links {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+      }
+      nav .links li {
+        list-style: none;
+      }
+      nav .links a {
+        display: block;
+        padding: 1em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+          transition: all .2s ease-in-out;
+      
+      }
+      #nav-toggle {
+        position: absolute;
+        top: -100px;
+      }
+      nav .icon-burger {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      nav .icon-burger .line {
+        width: 30px;
+        height: 5px;
+        background-color: #ffffff;
+        margin: 5px;
+        border-radius: 3px;
+        transition: all .5s ease-in-out;
+      }
+      @media screen and (max-width: 768px) {
+        nav .logo {
+          float: none;
+          width: auto;
+          justify-content: center;
+        }
+        nav .links {
+          float: none;
+          position: fixed;
+          z-index: 9;
+          left: 0;
+          right: 0;
+          top: 100px;
+          bottom: 100%;
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          justify-content: space-evenly;
+          background-color: rgba(0,0,0,.8);
+          overflow: hidden;
+          box-sizing: border-box;
+          transition: all 1.5s ease-in-out;
+              
+        }
+        nav .links a {
+          font-size: 20px;
+        }
+        nav :checked ~ .links {
+          bottom: 0;
+        }
+        nav .icon-burger {
+          display: block;
+        }
+        nav :checked ~ .icon-burger .line:nth-child(1) {
+          transform: translateY(10px) rotate(225deg);
+        }
+        nav :checked ~ .icon-burger .line:nth-child(3) {
+          transform: translateY(-10px) rotate(-225deg);
+        }
+        nav :checked ~ .icon-burger .line:nth-child(2) {
+          opacity: 0;
+        }
+        
+      }
+      
+      
+      
+      @media screen and (min-width: 1200px){
+          .design-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+      }
+      
+      .container{
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 1.2rem;
+      }
+      
+      .judull{
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: #fff;
+      }
+      
+      .judul{
+          position: relative;
+          padding: 0 2rem;
+          min-height: 100vh;
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/DSC09111.jpg") center/cover no-repeat fixed;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+      }
+      
+      .judu{
+          color: #fff;
+          position: relative;
+          padding: 0 2rem;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.658)), url("DSC05929.jpg") center/cover no-repeat fixed;
+          
+      }
+      
+      .baswafa{
+          font-family: cursive;
+          font-size: 3rem;
+          font-family: var(--Playfair);
+          line-height: 1.2;
+          stroke-width: 5px;
+          stroke: #000000;
+      }
+      
+      .judul p{
+          padding: 1rem 0 2rem 0;
+          font-size: 1.2rem;
+          text-transform: capitalize;
+          font-family: var(--Roboto);
+          font-weight: 300;
+          word-spacing: 2px;
+      }
+      
+      /* about */
+      .about{
+          color: #ffffff;
+          background: linear-gradient(to left, rgb(15, 15, 15), black);
+          padding: 4.5rem 0;
+      }
+      .about-text{
+          margin: 2rem 0;
+      }
+      .about-text > p{
+          font-size: 1.1rem;
+          padding: 0.6rem 0;
+          opacity: 0.8;
+      }
+      
+      .container{
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 1.2rem;
+      }
+      
+      @media screen and (min-width: 992px){
+          .blog-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+          .about-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              column-gap: 3rem;
+              align-items: center;
+          }
+          .about-contentt{
+              display:inline-block;
+              grid-template-rows: repeat(2, 1fr);
+              column-gap: 3rem;
+              align-items: center;
+          }
+      }
+      
+      /* footer */
+      footer{
+          background: var(--exDark);
+          color: #fff;
+          text-align: center;
+          padding: 1.5rem 2rem;
+      }
+      .social-links{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2rem;
+      }
+      .social-links a{
+          border: 2px solid #fff;
+          color: #fff;
+          display: block;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          text-decoration: none;
+          margin: 0 0.3rem;
+          transition: all 0.5s ease;
+      }
+      
+      .contact{
+          size: 0s;
+          padding: 40px;
+          width: 100%;
+          height: 60px;
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+      
+      .contact .gmail{
+          font-size: small;
+          background-color: darkblue;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease;
+      }
+      
+      .contact .gmail:hover{
+          scale: 1.1;
+          color: rgb(255, 255, 255);
+      
+      }
+      
+      .contact .gmail:active{
+          scale: 0.97;
+      }
+      
+      .contact .igeh{
+          background-color: darkblue;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease;
+      }
+      
+      .contact .igeh:hover{
+          scale: 1.1;
+          color: rgb(255, 255, 255);
+      
+      }
+      
+      .contact .igeh:active{
+          scale: 0.97;
+      }
+      
+      .contact .wea{
+          background-color: darkblue;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease;
+      }
+      
+      .contact .wea:hover{
+          scale: 1.1;
+          color: rgb(255, 255, 255);
+      
+      }
+      
+      .contact .wea:active{
+          scale: 0.97;
+      }
+      
+      @media screen and (min-width: 768px){
+          .navbar .container{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+          .search-input{
+              padding: 0.8rem 0;
+          }
+          .design-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+          .design-item{
+              margin: 0;
+          }
+          .blog-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+      }
+      
+      /* design */
+      .design{
+          padding: 5rem 0;
+          margin-top: 30px;
+      }
+      .title{
+          text-align: center;
+          padding: 1rem 0;
+      }
+      .title h2{
+          font-family: var(--Playfair);
+          font-size: 2.4rem;
+      }
+      .title p{
+          text-transform: uppercase;
+          padding: 0.6rem 0;
+      }
+      .design-content{
+          margin: 2rem 0;
+      }
+      .design-item{
+          cursor: pointer;
+          margin: 1.5rem 0;
+      }
+      .design-img{
+          max-width: 400px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          overflow: hidden;
+      }
+      .design-img::after{
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+      }
+      .design-img img{
+          transition:  all 0.5s ease;
+      }
+      .design-item:hover img{
+          transform: scale(1.2);
+      }
+      .design-img span:first-of-type{
+          position: absolute;
+          z-index: 1;
+          top: 10px;
+          left: 10px;
+          background: var(--exDark);
+          color: #fff;
+          padding: 0.25rem 1rem;
+      }
+      .design-img span:last-of-type{
+          position: absolute;
+          z-index: 1;
+          bottom: 10px;
+          right: 10px;
+          color: #fff;
+          font-weight: 700;
+          font-size: 1.1rem;
+      }
+      .design-title{
+          padding: 1rem;
+          font-size: 1.2rem;
+          text-align: center;
+          width: 70%;
+          margin: 0 auto;
+          color: burlywood;
+      }
+      .design-title a{
+          color: var(--dark);
+          text-decoration: none;
+          text-transform: capitalize;
+          font-family: var(--Playfair);
+      }
+      
+      @media screen and (min-width: 1200px){
+          .design-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+      }
+      
+      .grow { transition: all .2s ease-in-out; }
+      .grow:hover { transform: scale(1.1); }
+      
+      .action_btn{
+          background-color: orange;
+          color: black;
+          padding: 0.3rem 0.5rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+          
+      }
+      
+      .action_btn:hover{
+          transform: scale(1.2);
+          color: aqua;
+          
+      
+      }
+      .actbtn:hover{
+          scale: 1.1;
+          color: aqua;
+          
+      }
+      
+      .action_btn:active{
+          scale: 0.95;
+          
+      }
+      
+      
+      .nav1 .links {
+        float: left;
+        padding-right: 20rem;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+      }
+      
+      
+      
+      .nav2 .links {
+        float: right;
+        padding-right: 20rem;
+          padding-bottom: 1rem;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+      }
+      .nav2 .links li {
+        list-style: none;
+      }
+      .nav2 .links a {
+        display: block;
+        padding: 1em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+          transition: all .2s ease-in-out;
+      
+      }
+      
+      @media screen and (max-width: 768px) {
+      
+        .nav2 .links {
+          float: none;
+          
+          z-index: 9;
+          left: 0;
+          right: 0;
+          top: 100px;
+          bottom: 100%;
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          justify-content: space-evenly;
+          background-color: rgba(0,0,0,.8);
+          overflow: hidden;
+          box-sizing: border-box;
+          transition: all 1.5s ease-in-out;
+              
+        }
+        .nav2 .links a {
+          font-size: 20px;
+        }
+      
+      }
+      
+      
+      .rbg {
+          background-color: rgb(0, 185, 0);
+          color: rgb(2, 2, 2);
+          padding: 1rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+      }
+      </style>
+
+        <!-- header -->
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"><img src="LogoBASWAFA.PNG" style="width: 50px; padding-right: 15px;"><strong>BASWAFA</strong></div>
+            <ul class="links">
+                <li><a href="http://alwafaboardingschool.sch.id" class="action_btn">Home</a></li>
+                
+                <li><a href="/about.html" class="actbtn">About</a></li>
+                <li><a href="#contact" class="actbtn">Contact</a></li>
+                <li><a href="https://alwafaboardingschool.sch.id/halaman-ppdb/" class="action_btn">Daftar ke Al-Wafa</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </nav>
+        
+        <div class="judul">
+            <div class="judull">
+            <h1 class="baswafa">BARISAN PASKIBRA AL-WAFA</h1>
+            <br>
+            
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+        <!-- content -->
+        <!-- design -->
+        <script>
+
+          function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+         }
+
+          $(function () {
+            "use strict";
+            
+            $(".popup img").click(function () {
+                var $src = $(this).attr("src");
+                $(".show").fadeIn();
+                $(".img-show img").attr("src", $src);
+            });
+            
+            $("span, .overlay").click(function () {
+                $(".show").fadeOut();
+            });
+            
+        });
+
+        </script>
+    <section class="design" id="news">
+        <div class="container">
+          <div class="title">
+            <h2 style="color: white;">What's New</h2>
+            <p style="color: white;">BASWAFA</p>
+          </div>
+  
+          <div class="design-content">
+            <!-- item -->
+            <div class="design-item">
+              <div class="design-img">
+                
+                <img class="rbg" src="/img/DSC04862.jpg" alt="" />
+                <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+                <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">BJB</span>
+                
+              </div>
+              <div class="design-title">
+                
+                <a href="/img/DSC04862.jpg" target="_blank">BJB (Baswafa Jalan Bersama)</a>
+              </div>
+              
+            </div>
+            <!-- end of item -->
+            
+            <!-- item -->
+            <div class="design-item">
+                <div  class="design-img">
+                  <img class="rbg" src="/img/lkbbd/IMG_0076.jpg" loading="lazy" alt="" href="/img/DSC04886.jpg"/>
+                  <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+                  <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">Road to LKBB</span>
+                </div>
+                <div class="design-title">
+                  <a href="/img/lkbbd/IMG_0076.jpg loading="lazy" target="_blank">Road to LKBB Dispora</a>
+                </div>
+              </div>
+              <!-- end of item -->
+
+              <!-- item -->
+            <div class="design-item">
+              <div class="design-img">
+                <img class="rbg" src="/img/lkbbd/IMG_2818.JPG" alt="" loading="lazy" />
+                <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+                <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">LKBB</span>
+              </div>
+              <div class="design-title">
+                <a href="/img/lkbbd/IMG_2818.JPG" loading="lazy" target="_blank">LKBB DISPORA 2023</a>
+              </div>
+            </div>
+            <!-- end of item -->
+        </div>
+      </div>
+
+      
+
+      <div class="nav2">
+        <ul class="links">
+          <li><a href="news.html" class="action_btn">Read More<i class="fas fa-angle-right" style="padding-left: 0.5rem;"></i></a></li>
+      </ul>
+      </div>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!-- content -->
+      <!-- design -->
+  <section class="design" id="doc">
+      <div class="container">
+        <div class="title">
+          <h2 style="color: white;">Documentation</h2>
+          <p style="color: white;">BASWAFA</p>
+        </div>
+
+        <div class="design-content">
+          <!-- item -->
+          <div class="design-item">
+            <div class="design-img">
+              <img class="rbg" class="rbg" src="/img/DSC03444.jpg" loading="lazy" alt="" />
+              <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+              <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">Persiapan</span>
+            </div>
+            
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class="design-item">
+            <div  class="design-img">
+              <img class="rbg" src="/img/DSC03453.jpg" loading="lazy" alt="" />
+              <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+              <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">Persiapan</span>
+            </div>
+            
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class="design-item">
+              <div class="design-img">
+                <img class="rbg" src="/img/DSC03488.jpg" loading="lazy"  alt="" />
+                <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+              <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">Persiapan</span>
+              </div>
+              
+            </div>
+            <!-- end of item -->
+            <!-- item -->
+          <div class="design-item">
+            <div class="design-img">
+              <img class="rbg" src="/img/DSC05906.jpg" loading="lazy"  alt="" />
+              <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+              <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">17 Agustus</span>
+            </div>
+           
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class="design-item">
+            <div class="design-img">
+              <img class="rbg" src="/img/DSC05929.jpg" loading="lazy"  alt="" />
+              <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+              <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">17 Agustus</span>
+            </div>
+            
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class="design-item">
+              <div class="design-img">
+                <img class="rbg" src="/img/DSC05918.jpg" loading="lazy"  alt="" />
+                <span><i class="far fa-heart" style="padding-top: 0.5rem;"></i> 236</span>
+              <span style="padding-bottom: 0.5rem; padding-right:0.5rem;">17 Agustus</span>
+              </div>
+              
+          </div>
+           <!-- end of item -->
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="nav2">
+      <ul class="links">
+        <li><a href="doc.html" class="action_btn">Read More<i class="fas fa-angle-right" style="padding-left: 0.5rem;"></i></a></li>
+    </ul>
+    </div>
+    </section>
+
+    <br>
+    <hr>
+    <br>
+
+     <!-- about -->
+     <section class="judu" id="about">
+      <div class="container" style="padding-top:2rem;">
+        <div class="about-contentt" style="padding-right: 7rem;">
+          <div>
+            <br>
+            <br>
+            <img style=" max-width: 400px; display: flex; flex-direction:column; border-radius: 50px;" src="/img/DSC09194.jpg" loading="lazy"  alt="" />
+          </div>
+          <div class="about-text">
+            <div class="title">
+              <h2>Gilang Rizki Fauzi</h2>
+              <p>PELATIH BASWAFA</p>
+            </div>
+            <p style="text-align: center;">
+              Hidup seperti larry
+
+            </p>
+          </div>
+        </div>
+
+        <div class="about-contentt" style="padding-left: 7rem;">
+          <div>
+            <br>
+            <br>
+            <img style=" max-width: 400px; display: flex; flex-direction:column; border-radius: 50px;" src="/img/DSC09222.jpg" loading="lazy"  alt="" />
+          </div>
+          <div class="about-text">
+            <div class="title" style="text-align: center;">
+              <h2>Zahra Alfina Sab'ah</h2>
+              <p>KOORSAT BASWAFA 2024</p>
+            </div>
+            <p style="text-align: center;">
+              Hidup adalah hidup
+
+            </p>
+          </div>
+        </div>
+
+        <br>
+        <br>
+      </div>
+    </section>
+    <!-- end of about -->
+
+
+    
+      <br>
+      <hr>
+      <br>
+        
+      <!-- footer -->
+  <footer>
+    
+      <a style="font-weight: bold; font-size: 1.2rem;" id="contact">Follow Us</a>
+      <br>
+      <br>
+      <br>
+      <div class="social-links">
+        <a href="https://www.instagram.com/gilangrf02/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/sekolahalwafaciwidey" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/paskibraalwafaciwidey/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <span>Barisan Paskibra Al-Wafa</span>
+      <br>
+      <br>
+      
+    </footer>
+
+    <div class="">
+      <ul class="links">
+        <li><a href="#" style="font-size: 20px;" class="action_btn"><i class="	fas fa-angle-double-up" ></i></a></li>
+        
+    </ul>
+    </div>
+    
+    <br>
+    <br>
+
+        </body>
+</html>

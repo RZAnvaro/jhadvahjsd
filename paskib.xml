@@ -1,0 +1,864 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&quot; /&gt;
+        &lt;title&gt;Barisan Paskibra Al-Wafa&lt;/title&gt;
+        &lt;link rel=&quot;icon&quot; href=&quot;LogoBASWAFA.png&quot;&gt;
+        &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css&quot;
+      integrity=&quot;sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==&quot;
+      crossorigin=&quot;anonymous&quot;/&gt;
+    &lt;/head&gt;
+    
+    &lt;body id=&quot;home&quot;&gt;
+
+      &lt;style&gt;
+        html {
+          scroll-behavior: smooth;
+      }
+      
+      body {
+        padding: 0;
+        margin: 0;
+          background-color: rgb(0, 0, 0);
+          font-family: &#39;Montserrat&#39;, sans-serif;
+          margin-top: 100px;
+      }
+      
+      .dark-mode {
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
+        }
+      
+      nav {
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        right: 0;
+        top: 0;
+        font-family: &#39;Montserrat&#39;, sans-serif;
+        padding: 0 5%;
+        height: 100px;
+        background-color: #000000;
+      }
+      nav .logo {
+        float: left;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        color: #fff;
+      }
+      nav .links {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+      }
+      nav .links li {
+        list-style: none;
+      }
+      nav .links a {
+        display: block;
+        padding: 1em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+          transition: all .2s ease-in-out;
+      
+      }
+      #nav-toggle {
+        position: absolute;
+        top: -100px;
+      }
+      nav .icon-burger {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      nav .icon-burger .line {
+        width: 30px;
+        height: 5px;
+        background-color: #ffffff;
+        margin: 5px;
+        border-radius: 3px;
+        transition: all .5s ease-in-out;
+      }
+      @media screen and (max-width: 768px) {
+        nav .logo {
+          float: none;
+          width: auto;
+          justify-content: center;
+        }
+        nav .links {
+          float: none;
+          position: fixed;
+          z-index: 9;
+          left: 0;
+          right: 0;
+          top: 100px;
+          bottom: 100%;
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          justify-content: space-evenly;
+          background-color: rgba(0,0,0,.8);
+          overflow: hidden;
+          box-sizing: border-box;
+          transition: all 1.5s ease-in-out;
+              
+        }
+        nav .links a {
+          font-size: 20px;
+        }
+        nav :checked ~ .links {
+          bottom: 0;
+        }
+        nav .icon-burger {
+          display: block;
+        }
+        nav :checked ~ .icon-burger .line:nth-child(1) {
+          transform: translateY(10px) rotate(225deg);
+        }
+        nav :checked ~ .icon-burger .line:nth-child(3) {
+          transform: translateY(-10px) rotate(-225deg);
+        }
+        nav :checked ~ .icon-burger .line:nth-child(2) {
+          opacity: 0;
+        }
+        
+      }
+      
+      
+      
+      @media screen and (min-width: 1200px){
+          .design-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+      }
+      
+      .container{
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 1.2rem;
+      }
+      
+      .judull{
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: #fff;
+      }
+      
+      .judul{
+          position: relative;
+          padding: 0 2rem;
+          min-height: 100vh;
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(&quot;img/DSC09111.jpg&quot;) center/cover no-repeat fixed;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+      }
+      
+      .judu{
+          color: #fff;
+          position: relative;
+          padding: 0 2rem;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.658)), url(&quot;DSC05929.jpg&quot;) center/cover no-repeat fixed;
+          
+      }
+      
+      .baswafa{
+          font-family: cursive;
+          font-size: 3rem;
+          font-family: var(--Playfair);
+          line-height: 1.2;
+          stroke-width: 5px;
+          stroke: #000000;
+      }
+      
+      .judul p{
+          padding: 1rem 0 2rem 0;
+          font-size: 1.2rem;
+          text-transform: capitalize;
+          font-family: var(--Roboto);
+          font-weight: 300;
+          word-spacing: 2px;
+      }
+      
+      /* about */
+      .about{
+          color: #ffffff;
+          background: linear-gradient(to left, rgb(15, 15, 15), black);
+          padding: 4.5rem 0;
+      }
+      .about-text{
+          margin: 2rem 0;
+      }
+      .about-text &gt; p{
+          font-size: 1.1rem;
+          padding: 0.6rem 0;
+          opacity: 0.8;
+      }
+      
+      .container{
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 1.2rem;
+      }
+      
+      @media screen and (min-width: 992px){
+          .blog-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+          .about-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              column-gap: 3rem;
+              align-items: center;
+          }
+          .about-contentt{
+              display:inline-block;
+              grid-template-rows: repeat(2, 1fr);
+              column-gap: 3rem;
+              align-items: center;
+          }
+      }
+      
+      /* footer */
+      footer{
+          background: var(--exDark);
+          color: #fff;
+          text-align: center;
+          padding: 1.5rem 2rem;
+      }
+      .social-links{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2rem;
+      }
+      .social-links a{
+          border: 2px solid #fff;
+          color: #fff;
+          display: block;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          text-decoration: none;
+          margin: 0 0.3rem;
+          transition: all 0.5s ease;
+      }
+      
+      .contact{
+          size: 0s;
+          padding: 40px;
+          width: 100%;
+          height: 60px;
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+      
+      .contact .gmail{
+          font-size: small;
+          background-color: darkblue;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease;
+      }
+      
+      .contact .gmail:hover{
+          scale: 1.1;
+          color: rgb(255, 255, 255);
+      
+      }
+      
+      .contact .gmail:active{
+          scale: 0.97;
+      }
+      
+      .contact .igeh{
+          background-color: darkblue;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease;
+      }
+      
+      .contact .igeh:hover{
+          scale: 1.1;
+          color: rgb(255, 255, 255);
+      
+      }
+      
+      .contact .igeh:active{
+          scale: 0.97;
+      }
+      
+      .contact .wea{
+          background-color: darkblue;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease;
+      }
+      
+      .contact .wea:hover{
+          scale: 1.1;
+          color: rgb(255, 255, 255);
+      
+      }
+      
+      .contact .wea:active{
+          scale: 0.97;
+      }
+      
+      @media screen and (min-width: 768px){
+          .navbar .container{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+          .search-input{
+              padding: 0.8rem 0;
+          }
+          .design-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+          .design-item{
+              margin: 0;
+          }
+          .blog-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+      }
+      
+      /* design */
+      .design{
+          padding: 5rem 0;
+          margin-top: 30px;
+      }
+      .title{
+          text-align: center;
+          padding: 1rem 0;
+      }
+      .title h2{
+          font-family: var(--Playfair);
+          font-size: 2.4rem;
+      }
+      .title p{
+          text-transform: uppercase;
+          padding: 0.6rem 0;
+      }
+      .design-content{
+          margin: 2rem 0;
+      }
+      .design-item{
+          cursor: pointer;
+          margin: 1.5rem 0;
+      }
+      .design-img{
+          max-width: 400px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          overflow: hidden;
+      }
+      .design-img::after{
+          position: absolute;
+          content: &quot;&quot;;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+      }
+      .design-img img{
+          transition:  all 0.5s ease;
+      }
+      .design-item:hover img{
+          transform: scale(1.2);
+      }
+      .design-img span:first-of-type{
+          position: absolute;
+          z-index: 1;
+          top: 10px;
+          left: 10px;
+          background: var(--exDark);
+          color: #fff;
+          padding: 0.25rem 1rem;
+      }
+      .design-img span:last-of-type{
+          position: absolute;
+          z-index: 1;
+          bottom: 10px;
+          right: 10px;
+          color: #fff;
+          font-weight: 700;
+          font-size: 1.1rem;
+      }
+      .design-title{
+          padding: 1rem;
+          font-size: 1.2rem;
+          text-align: center;
+          width: 70%;
+          margin: 0 auto;
+          color: burlywood;
+      }
+      .design-title a{
+          color: var(--dark);
+          text-decoration: none;
+          text-transform: capitalize;
+          font-family: var(--Playfair);
+      }
+      
+      @media screen and (min-width: 1200px){
+          .design-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+      }
+      
+      .grow { transition: all .2s ease-in-out; }
+      .grow:hover { transform: scale(1.1); }
+      
+      .action_btn{
+          background-color: orange;
+          color: black;
+          padding: 0.3rem 0.5rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+          
+      }
+      
+      .action_btn:hover{
+          transform: scale(1.2);
+          color: aqua;
+          
+      
+      }
+      .actbtn:hover{
+          scale: 1.1;
+          color: aqua;
+          
+      }
+      
+      .action_btn:active{
+          scale: 0.95;
+          
+      }
+      
+      
+      .nav1 .links {
+        float: left;
+        padding-right: 20rem;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+      }
+      
+      
+      
+      .nav2 .links {
+        float: right;
+        padding-right: 20rem;
+          padding-bottom: 1rem;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+      }
+      .nav2 .links li {
+        list-style: none;
+      }
+      .nav2 .links a {
+        display: block;
+        padding: 1em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+          transition: all .2s ease-in-out;
+      
+      }
+      
+      @media screen and (max-width: 768px) {
+      
+        .nav2 .links {
+          float: none;
+          
+          z-index: 9;
+          left: 0;
+          right: 0;
+          top: 100px;
+          bottom: 100%;
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          justify-content: space-evenly;
+          background-color: rgba(0,0,0,.8);
+          overflow: hidden;
+          box-sizing: border-box;
+          transition: all 1.5s ease-in-out;
+              
+        }
+        .nav2 .links a {
+          font-size: 20px;
+        }
+      
+      }
+      
+      
+      .rbg {
+          background-color: rgb(0, 185, 0);
+          color: rgb(2, 2, 2);
+          padding: 1rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+      }
+      &lt;/style&gt;
+
+        &lt;!-- header --&gt;
+        &lt;nav&gt;
+            &lt;input id=&quot;nav-toggle&quot; type=&quot;checkbox&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;&lt;img src=&quot;LogoBASWAFA.PNG&quot; style=&quot;width: 50px; padding-right: 15px;&quot;&gt;&lt;strong&gt;BASWAFA&lt;/strong&gt;&lt;/div&gt;
+            &lt;ul class=&quot;links&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;http://alwafaboardingschool.sch.id&quot; class=&quot;action_btn&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                
+                &lt;li&gt;&lt;a href=&quot;/about.html&quot; class=&quot;actbtn&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contact&quot; class=&quot;actbtn&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;https://alwafaboardingschool.sch.id/halaman-ppdb/&quot; class=&quot;action_btn&quot;&gt;Daftar ke Al-Wafa&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;label for=&quot;nav-toggle&quot; class=&quot;icon-burger&quot;&gt;
+                &lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
+            &lt;/label&gt;
+        &lt;/nav&gt;
+        
+        &lt;div class=&quot;judul&quot;&gt;
+            &lt;div class=&quot;judull&quot;&gt;
+            &lt;h1 class=&quot;baswafa&quot;&gt;BARISAN PASKIBRA AL-WAFA&lt;/h1&gt;
+            &lt;br&gt;
+            
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;br&gt;
+        &lt;hr&gt;
+        &lt;br&gt;
+        &lt;!-- content --&gt;
+        &lt;!-- design --&gt;
+        &lt;script&gt;
+
+          function myFunction() {
+            var element = document.body;
+            element.classList.toggle(&quot;dark-mode&quot;);
+         }
+
+          $(function () {
+            &quot;use strict&quot;;
+            
+            $(&quot;.popup img&quot;).click(function () {
+                var $src = $(this).attr(&quot;src&quot;);
+                $(&quot;.show&quot;).fadeIn();
+                $(&quot;.img-show img&quot;).attr(&quot;src&quot;, $src);
+            });
+            
+            $(&quot;span, .overlay&quot;).click(function () {
+                $(&quot;.show&quot;).fadeOut();
+            });
+            
+        });
+
+        &lt;/script&gt;
+    &lt;section class=&quot;design&quot; id=&quot;news&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+          &lt;div class=&quot;title&quot;&gt;
+            &lt;h2 style=&quot;color: white;&quot;&gt;What&#39;s New&lt;/h2&gt;
+            &lt;p style=&quot;color: white;&quot;&gt;BASWAFA&lt;/p&gt;
+          &lt;/div&gt;
+  
+          &lt;div class=&quot;design-content&quot;&gt;
+            &lt;!-- item --&gt;
+            &lt;div class=&quot;design-item&quot;&gt;
+              &lt;div class=&quot;design-img&quot;&gt;
+                
+                &lt;img class=&quot;rbg&quot; src=&quot;/img/DSC04862.jpg&quot; alt=&quot;&quot; /&gt;
+                &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+                &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;BJB&lt;/span&gt;
+                
+              &lt;/div&gt;
+              &lt;div class=&quot;design-title&quot;&gt;
+                
+                &lt;a href=&quot;/img/DSC04862.jpg&quot; target=&quot;_blank&quot;&gt;BJB (Baswafa Jalan Bersama)&lt;/a&gt;
+              &lt;/div&gt;
+              
+            &lt;/div&gt;
+            &lt;!-- end of item --&gt;
+            
+            &lt;!-- item --&gt;
+            &lt;div class=&quot;design-item&quot;&gt;
+                &lt;div  class=&quot;design-img&quot;&gt;
+                  &lt;img class=&quot;rbg&quot; src=&quot;/img/lkbbd/IMG_0076.jpg&quot; loading=&quot;lazy&quot; alt=&quot;&quot; href=&quot;/img/DSC04886.jpg&quot;/&gt;
+                  &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+                  &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;Road to LKBB&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;design-title&quot;&gt;
+                  &lt;a href=&quot;/img/lkbbd/IMG_0076.jpg loading=&quot;lazy&quot; target=&quot;_blank&quot;&gt;Road to LKBB Dispora&lt;/a&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!-- end of item --&gt;
+
+              &lt;!-- item --&gt;
+            &lt;div class=&quot;design-item&quot;&gt;
+              &lt;div class=&quot;design-img&quot;&gt;
+                &lt;img class=&quot;rbg&quot; src=&quot;/img/lkbbd/IMG_2818.JPG&quot; alt=&quot;&quot; loading=&quot;lazy&quot; /&gt;
+                &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+                &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;LKBB&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;design-title&quot;&gt;
+                &lt;a href=&quot;/img/lkbbd/IMG_2818.JPG&quot; loading=&quot;lazy&quot; target=&quot;_blank&quot;&gt;LKBB DISPORA 2023&lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- end of item --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      
+
+      &lt;div class=&quot;nav2&quot;&gt;
+        &lt;ul class=&quot;links&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;news.html&quot; class=&quot;action_btn&quot;&gt;Read More&lt;i class=&quot;fas fa-angle-right&quot; style=&quot;padding-left: 0.5rem;&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;br&gt;
+      &lt;hr&gt;
+      &lt;br&gt;
+      &lt;!-- content --&gt;
+      &lt;!-- design --&gt;
+  &lt;section class=&quot;design&quot; id=&quot;doc&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;
+          &lt;h2 style=&quot;color: white;&quot;&gt;Documentation&lt;/h2&gt;
+          &lt;p style=&quot;color: white;&quot;&gt;BASWAFA&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;design-content&quot;&gt;
+          &lt;!-- item --&gt;
+          &lt;div class=&quot;design-item&quot;&gt;
+            &lt;div class=&quot;design-img&quot;&gt;
+              &lt;img class=&quot;rbg&quot; class=&quot;rbg&quot; src=&quot;/img/DSC03444.jpg&quot; loading=&quot;lazy&quot; alt=&quot;&quot; /&gt;
+              &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+              &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;Persiapan&lt;/span&gt;
+            &lt;/div&gt;
+            
+          &lt;/div&gt;
+          &lt;!-- end of item --&gt;
+          &lt;!-- item --&gt;
+          &lt;div class=&quot;design-item&quot;&gt;
+            &lt;div  class=&quot;design-img&quot;&gt;
+              &lt;img class=&quot;rbg&quot; src=&quot;/img/DSC03453.jpg&quot; loading=&quot;lazy&quot; alt=&quot;&quot; /&gt;
+              &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+              &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;Persiapan&lt;/span&gt;
+            &lt;/div&gt;
+            
+          &lt;/div&gt;
+          &lt;!-- end of item --&gt;
+          &lt;!-- item --&gt;
+          &lt;div class=&quot;design-item&quot;&gt;
+              &lt;div class=&quot;design-img&quot;&gt;
+                &lt;img class=&quot;rbg&quot; src=&quot;/img/DSC03488.jpg&quot; loading=&quot;lazy&quot;  alt=&quot;&quot; /&gt;
+                &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+              &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;Persiapan&lt;/span&gt;
+              &lt;/div&gt;
+              
+            &lt;/div&gt;
+            &lt;!-- end of item --&gt;
+            &lt;!-- item --&gt;
+          &lt;div class=&quot;design-item&quot;&gt;
+            &lt;div class=&quot;design-img&quot;&gt;
+              &lt;img class=&quot;rbg&quot; src=&quot;/img/DSC05906.jpg&quot; loading=&quot;lazy&quot;  alt=&quot;&quot; /&gt;
+              &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+              &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;17 Agustus&lt;/span&gt;
+            &lt;/div&gt;
+           
+          &lt;/div&gt;
+          &lt;!-- end of item --&gt;
+          &lt;!-- item --&gt;
+          &lt;div class=&quot;design-item&quot;&gt;
+            &lt;div class=&quot;design-img&quot;&gt;
+              &lt;img class=&quot;rbg&quot; src=&quot;/img/DSC05929.jpg&quot; loading=&quot;lazy&quot;  alt=&quot;&quot; /&gt;
+              &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+              &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;17 Agustus&lt;/span&gt;
+            &lt;/div&gt;
+            
+          &lt;/div&gt;
+          &lt;!-- end of item --&gt;
+          &lt;!-- item --&gt;
+          &lt;div class=&quot;design-item&quot;&gt;
+              &lt;div class=&quot;design-img&quot;&gt;
+                &lt;img class=&quot;rbg&quot; src=&quot;/img/DSC05918.jpg&quot; loading=&quot;lazy&quot;  alt=&quot;&quot; /&gt;
+                &lt;span&gt;&lt;i class=&quot;far fa-heart&quot; style=&quot;padding-top: 0.5rem;&quot;&gt;&lt;/i&gt; 236&lt;/span&gt;
+              &lt;span style=&quot;padding-bottom: 0.5rem; padding-right:0.5rem;&quot;&gt;17 Agustus&lt;/span&gt;
+              &lt;/div&gt;
+              
+          &lt;/div&gt;
+           &lt;!-- end of item --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    
+    &lt;div class=&quot;nav2&quot;&gt;
+      &lt;ul class=&quot;links&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;doc.html&quot; class=&quot;action_btn&quot;&gt;Read More&lt;i class=&quot;fas fa-angle-right&quot; style=&quot;padding-left: 0.5rem;&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;br&gt;
+    &lt;hr&gt;
+    &lt;br&gt;
+
+     &lt;!-- about --&gt;
+     &lt;section class=&quot;judu&quot; id=&quot;about&quot;&gt;
+      &lt;div class=&quot;container&quot; style=&quot;padding-top:2rem;&quot;&gt;
+        &lt;div class=&quot;about-contentt&quot; style=&quot;padding-right: 7rem;&quot;&gt;
+          &lt;div&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;img style=&quot; max-width: 400px; display: flex; flex-direction:column; border-radius: 50px;&quot; src=&quot;/img/DSC09194.jpg&quot; loading=&quot;lazy&quot;  alt=&quot;&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;about-text&quot;&gt;
+            &lt;div class=&quot;title&quot;&gt;
+              &lt;h2&gt;Gilang Rizki Fauzi&lt;/h2&gt;
+              &lt;p&gt;PELATIH BASWAFA&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;p style=&quot;text-align: center;&quot;&gt;
+              Hidup seperti larry
+
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;about-contentt&quot; style=&quot;padding-left: 7rem;&quot;&gt;
+          &lt;div&gt;
+            &lt;br&gt;
+            &lt;br&gt;
+            &lt;img style=&quot; max-width: 400px; display: flex; flex-direction:column; border-radius: 50px;&quot; src=&quot;/img/DSC09222.jpg&quot; loading=&quot;lazy&quot;  alt=&quot;&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;about-text&quot;&gt;
+            &lt;div class=&quot;title&quot; style=&quot;text-align: center;&quot;&gt;
+              &lt;h2&gt;Zahra Alfina Sab&#39;ah&lt;/h2&gt;
+              &lt;p&gt;KOORSAT BASWAFA 2024&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;p style=&quot;text-align: center;&quot;&gt;
+              Hidup adalah hidup
+
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;br&gt;
+        &lt;br&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- end of about --&gt;
+
+
+    
+      &lt;br&gt;
+      &lt;hr&gt;
+      &lt;br&gt;
+        
+      &lt;!-- footer --&gt;
+  &lt;footer&gt;
+    
+      &lt;a style=&quot;font-weight: bold; font-size: 1.2rem;&quot; id=&quot;contact&quot;&gt;Follow Us&lt;/a&gt;
+      &lt;br&gt;
+      &lt;br&gt;
+      &lt;br&gt;
+      &lt;div class=&quot;social-links&quot;&gt;
+        &lt;a href=&quot;https://www.instagram.com/gilangrf02/&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a href=&quot;https://www.instagram.com/sekolahalwafaciwidey&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a href=&quot;https://www.instagram.com/paskibraalwafaciwidey/&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;span&gt;Barisan Paskibra Al-Wafa&lt;/span&gt;
+      &lt;br&gt;
+      &lt;br&gt;
+      
+    &lt;/footer&gt;
+
+    &lt;div class=&quot;&quot;&gt;
+      &lt;ul class=&quot;links&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; style=&quot;font-size: 20px;&quot; class=&quot;action_btn&quot;&gt;&lt;i class=&quot;	fas fa-angle-double-up&quot; &gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        
+    &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;br&gt;
+    &lt;br&gt;
+
+        &lt;/body&gt;
+&lt;/html&gt;
